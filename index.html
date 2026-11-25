@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="facebook-domain-verification" content="xzveuk3cs6dngk6jm7efxea9fpbfq2" />
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1651365015353464');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1651365015353464&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lezzama Music - Pianist & Composer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    :root {
+      /* ==========================================================================
+         PANEL DE CONTROL DE PRUEBAS
+         ========================================================================== */
+      --tamano-logo-hero: 68vw;
+      --subir-contenido-hero: 0px;
+
+      /* AJUSTES DINÁMICOS DEL LOGO */
+      --separacion-logo: 1px;          /* Distancia entre el texto y el icono en escritorio */
+      --escala-zoom-logo: 1.15;        /* Magnitud del zoom en hover */
+      --altura-icono-desktop: 1.1em;   /* Tamaño del icono en pantallas de escritorio */
+      --altura-icono-movil: 1.5em;     /* Tamaño del icono en móvil */
+
+      /* Variables Base del Sitio */
+      --bg: #050505;
+      --bg-alt: #0f0f0f;
+      --fg: #e8e8e8;
+      --muted: #888888;
+      --accent: #d4af37;
+      --glass-bg: rgba(255,255,255,0.03);
+      --glass-border: rgba(255,255,255,0.1);
+      --maxw: 1100px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      color: var(--fg);
+      background-color: var(--bg);
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    /* Corrección global para evitar que los títulos se encimen al romper renglón */
+    h1, h2, h3, h4, h5, h6 {
+      line-height: 1.3;
+      margin-top: 0;
+    }
+
+    section, footer, #contact {
+      scroll-margin-top: 80px;
+    }
+
+    /* Sistema Multilingüe Nivel CSS */
+    .lang-en { display: none !important; }
+    body.lang-mode-en .lang-es { display: none !important; }
+    body.lang-mode-en .lang-en { display: inline-block !important; }
+    body.lang-mode-en h1.lang-en,
+    body.lang-mode-en h2.lang-en,
+    body.lang-mode-en p.lang-en,
+    body.lang-mode-en div.lang-en { display: block !important; }
+
+    /* Animación del Logo */
+    @keyframes temporalZoom {
+      0% { transform: scale(1); }
+      40% { transform: scale(var(--escala-zoom-logo)); }
+      100% { transform: scale(1); }
+    }
+
+    /* ==========================================================================
+       ESTRUCTURA DE NAVEGACIÓN
+       ========================================================================== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(5,5,5,0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 9999;
+      border-bottom: 1px solid var(--glass-border);
+    }
+    .nav-container {
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 4%;
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: var(--separacion-logo);
+      text-decoration: none;
+      color: #fff;
+      font-size: 22px;
+      text-transform: uppercase;
+      transition: transform 0.4s ease-in-out;
+    }
+    .brand-logo:hover {
+      animation: temporalZoom 1.3s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .logo-img {
+      height: var(--altura-icono-desktop);
+      max-height: 50px;
+      width: auto;
+      object-fit: contain;
+      flex-shrink: 0;
+      display: block;
+    }
+    .logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1em;
+      font-weight: 700;
+      letter-spacing: 1px;
+      line-height: 1.1;
+    }
+    .nav-right-box {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+    .nav-links a {
+      color: var(--fg);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    .lang-toggle-btn {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .lang-toggle-btn:hover {
+      border-color: var(--accent);
+      background: rgba(212,175,55,0.1);
+    }
+
+    .menu-toggle-icon {
+      display: none;
+      font-size: 22px;
+      color: #fff;
+      cursor: pointer;
+      z-index: 1100;
+    }
+
+    .desktop-socials { display: none; }
+
+    /* Barra de Redes Sociales Flotante */
+    .social-sidebar {
+      position: fixed;
+      right: 25px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      z-index: 999;
+    }
+    .social-sidebar a {
+      color: rgba(255, 255, 255, 0.35);
+      font-size: 16px;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      text-decoration: none;
+      display: block;
+    }
+    .social-sidebar a:hover {
+      color: var(--accent);
+      transform: scale(1.25);
+    }
+
+    /* Distribución de Escritorio */
+    @media (min-width: 869px) {
+      .hero {
+        background-position: center center !important;
+      }
+      .social-sidebar { display: none !important; }
+      .brand-logo { flex: 1; justify-content: center; }
+      .nav-links { flex: 1; justify-content: flex-start; }
+      .nav-right-box { flex: 1; justify-content: flex-end; gap: 25px; }
+      .desktop-socials {
+        display: flex !important;
+        gap: 16px;
+        align-items: center;
+      }
+      .desktop-socials a {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 14px;
+        transition: all 0.3s ease;
+      }
+      .desktop-socials a:hover {
+        color: var(--accent);
+        transform: scale(1.15);
+      }
+    }
+
+    /* Configuración de Dispositivos Móviles */
+    @media (max-width: 868px) {
+      :root {
+        --tamano-logo-hero: 90vw;
+      }
+      .hero {
+        background-position: 85% center !important;
+      }
+      .menu-toggle-icon { display: block; }
+      .brand-logo {
+        flex: none;
+        font-size: 20px;
+        gap: 6px;
+      }
+      .nav-right-box { flex: none; }
+
+      .brand-logo .logo-img {
+        order: 1;
+        height: var(--altura-icono-movil);
+      }
+      .brand-logo .logo-first { order: 2; }
+      .brand-logo .logo-last { order: 3; }
+
+      .nav-links {
+        position: fixed;
+        top: 0; right: -100%;
+        width: 280px; height: 100vh;
+        background: #0a0a0a;
+        border-left: 1px solid var(--glass-border);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 1050;
+      }
+      .nav-links.active { right: 0; }
+
+      .social-sidebar {
+        right: 20px;
+        bottom: 20px;
+        top: auto;
+        transform: none;
+        flex-direction: row;
+        background: rgba(15, 15, 15, 0.75);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        padding: 10px 18px;
+        border-radius: 30px;
+        border: 1px solid var(--glass-border);
+        gap: 16px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      }
+      .social-sidebar a {
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 15px;
+      }
+    }
+
+    /* Secciones */
+    section {
+      padding: 100px 20px;
+      max-width: var(--maxw);
+      margin: 0 auto;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      text-align: center;
+      margin-bottom: 50px;
+      color: #fff;
+      line-height: 1.3;
+    }
+
+    /* Hero Base */
+    .hero {
+      min-height: 100vh;
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      background: linear-gradient(to bottom, rgba(5,5,5,0.25), var(--bg)),
+                  url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj1bNfIX-uTOoEfseFb0ySGAtaLADVKbwJFtn8Q3mqEk7Qak78757FOIueXM_fnWeRiLUxNjzIOctS8myGFqVkIcxfC8H1azAEvZS15V5ZivZwQ824w3IoJYoFKT-rNW-HyeSMnAnhchJKeI_BV5-bS6aBiteAXaDUOjLq_tpWyJO5w1ZYeKy9bvxmpSzDI/s1600/Live%201.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      padding: 76px 20px 30px 20px;
+      max-width: 100%;
+    }
+    .hero-content {
+      max-width: 960px;
+      width: 100%;
+      z-index: 2;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .hero-title-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+      width: 100%;
+    }
+    .hero-logo-img {
+      width: var(--tamano-logo-hero);
+      max-width: 780px;
+      max-height: 60vh;
+      height: auto;
+      object-fit: contain;
+      flex-shrink: 0;
+      display: block;
+      transform: translateY(var(--subir-contenido-hero));
+    }
+
+    .hero-subtitle {
+      font-size: clamp(12px, 1.3vw, 15px);
+      color: #cfcfcf;
+      font-weight: 400;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      margin-top: 4px;
+      margin-bottom: 24px;
+      transform: translateY(var(--subir-contenido-hero));
+      position: relative;
+      line-height: 1.4;
+    }
+    .hero-content .btn-primary {
+      transform: translateY(var(--subir-contenido-hero));
+      position: relative;
+    }
+    .hero-content .btn-primary:hover {
+      transform: translateY(calc(var(--subir-contenido-hero) - 2px)) !important;
+    }
+
+    /* Biografía */
+    .bio-container { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+    .bio-text p { font-size: 16px; line-height: 1.8; color: var(--muted); margin-bottom: 20px; }
+    .bio-img { width: 100%; border-radius: 8px; filter: grayscale(100%); transition: filter 0.5s; }
+    .bio-img:hover { filter: grayscale(0%); }
+    @media(max-width: 768px) {
+      .bio-container { grid-template-columns: 1fr; gap: 30px; }
+      .bio-text .section-title { text-align: center !important; }
+    }
+
+    /* Tabla de Tour */
+    .tour-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    .tour-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 15px;
+      border-bottom: 1px solid var(--glass-border);
+      transition: background 0.3s;
+    }
+    .tour-row:hover { background: rgba(255,255,255,0.02); }
+    .tour-date { font-weight: 700; color: var(--accent); font-size: 14px; width: 25%; text-align: left; }
+    .tour-venue { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: #fff; width: 35%; text-align: left; line-height: 1.3; }
+    .tour-city { color: var(--muted); font-size: 14px; width: 25%; text-align: left; }
+    .tour-btn-col { width: 15%; text-align: right; }
+
+    .btn-tour {
+      padding: 8px 18px;
+      font-size: 11px;
+      border-radius: 4px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border: 1px solid var(--accent);
+      background: transparent;
+      color: var(--accent);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-tour:hover {
+      background: var(--accent);
+      color: #000;
+      box-shadow: 0 0 12px rgba(212,175,55,0.4);
+      cursor: pointer;
+    }
+
+    @media(max-width: 600px) {
+      .tour-row { flex-direction: column; text-align: center; gap: 12px; padding: 25px 10px; }
+      .tour-date, .tour-venue, .tour-city, .tour-btn-col { width: 100%; text-align: center; }
+      .tour-btn-col { margin-top: 5px; }
+    }
+
+    /* Botones Generales */
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px;
+      border-radius: 50px; text-decoration: none; color: #fff;
+      font-weight: 500; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;
+      border: 1px solid var(--glass-border); background: var(--glass-bg);
+      transition: all 0.3s ease; cursor: pointer;
+    }
+    .btn:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3); transform: translateY(-2px); }
+    .btn-primary { background: var(--accent); color: #000; border: none; }
+    .btn-primary:hover { background: #fff; color: #000; }
+
+    /* Multimedia */
+    .media-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+    .card { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: 20px; }
+    iframe { width: 100%; border-radius: 10px; border: 0; }
+
+    /* ==========================================================================
+       SISTEMA DE GALERÍA (Formato Cuadrado 1:1 Universal - Altura Controlada)
+       ========================================================================== */
+    .gallery-wrapper {
+      position: relative;
+      width: 100%;
+    }
+    .gallery {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      padding: 10px 0 25px 0;
+      scrollbar-width: thin;
+      scrollbar-color: var(--accent) transparent;
+    }
+    .gallery::-webkit-scrollbar { height: 6px; }
+    .gallery::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.02); border-radius: 10px; }
+    .gallery::-webkit-scrollbar-thumb { background: rgba(212, 175, 55, 0.3); border-radius: 10px; }
+    .gallery::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+    .gallery img {
+      flex: 0 0 240px;
+      height: 240px;
+      width: 240px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 8px;
+      scroll-snap-align: start;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s;
+      filter: brightness(0.7);
+      cursor: pointer;
+    }
+    .gallery img:hover { transform: scale(1.03); filter: brightness(1); }
+
+    .gallery-nav-hint {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      margin-top: 15px;
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+    .gallery-hint-arrow { color: var(--accent); font-size: 16px; animation: pulseArrows 2s infinite ease-in-out; }
+    @keyframes pulseArrows { 0%, 100% { transform: translateX(0); opacity: 0.4; } 50% { transform: translateX(4px); opacity: 1; } }
+    .gallery-hint-arrow.left-arrow { animation: pulseArrowsLeft 2s infinite ease-in-out; }
+    @keyframes pulseArrowsLeft { 0%, 100% { transform: translateX(0); opacity: 0.4; } 50% { transform: translateX(-4px); opacity: 1; } }
+
+    @media (max-width: 768px) {
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4px;
+        overflow-x: visible;
+        padding: 0;
+      }
+      .gallery img {
+        flex: none;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        border-radius: 0;
+        filter: brightness(1);
+      }
+      .gallery-nav-hint { display: none !important; }
+    }
+
+    /* Patrocinios */
+    .endorsements-section {
+      padding: 60px 20px 10px 20px;
+      text-align: center;
+      background: var(--bg-alt);
+      width: 100%;
+      max-width: 100%;
+    }
+    .endorsements-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--muted);
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+    .endorsements-display { display: flex; justify-content: center; align-items: center; }
+    .endorsements-brand {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing: 6px;
+      color: #fff;
+      border: 1px solid var(--glass-border);
+      padding: 12px 28px;
+      background: var(--glass-bg);
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      display: inline-block;
+      line-height: 1.2;
+    }
+    .endorsements-brand span { color: var(--accent); }
+    .endorsements-brand:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 15px rgba(212,175,55,0.1);
+    }
+
+    /* Lightbox Overlay */
+    .lightbox-overlay {
+      position: fixed; inset: 0; background: rgba(3,3,3,0.96);
+      backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+      display: none; align-items: center; justify-content: center;
+      z-index: 10000;
+      opacity: 0; transition: opacity 0.35s ease;
+    }
+    .lightbox-overlay.active { display: flex; opacity: 1; }
+
+    .lightbox-img {
+      max-width: 80%; max-height: 82vh; border-radius: 6px;
+      transform: scale(0.92); transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.9);
+    }
+    .lightbox-overlay.active .lightbox-img { transform: scale(1); }
+
+    .lightbox-close-btn {
+      position: absolute; top: 25px; right: 25px;
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      color: #fff; width: 44px; height: 44px; border-radius: 50%;
+      cursor: pointer; display: grid; place-items: center; font-size: 18px; transition: 0.3s;
+      z-index: 2200;
+    }
+    .lightbox-close-btn:hover { background: var(--accent); color: #000; border-color: var(--accent); }
+
+    .lightbox-nav-btn {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+      color: #fff; width: 54px; height: 54px; border-radius: 50%;
+      cursor: pointer; display: grid; place-items: center; font-size: 20px; transition: 0.3s;
+      z-index: 2100; user-select: none;
+    }
+    .lightbox-nav-btn:hover { background: var(--accent); color: #000; border-color: var(--accent); }
+    .prev-btn { left: 30px; }
+    .next-btn { right: 30px; }
+
+    @media (max-width: 768px) {
+      .prev-btn { left: 12px; }
+      .next-btn { right: 12px; }
+      .lightbox-nav-btn { width: 44px; height: 44px; font-size: 16px; }
+      .lightbox-img { max-width: 92%; }
+    }
+
+    /* Contacto & Footer */
+    footer { text-align: center; padding: 40px 20px; background: var(--bg-alt); width: 100%; max-width: 100%; }
+    .contact-email { font-size: 26px; font-family: 'Playfair Display', serif; color: var(--accent); text-decoration: none; margin-bottom: 12px; display: inline-block; transition: opacity 0.3s; line-height: 1.3; }
+    .contact-email:hover { opacity: 0.8; }
+
+    .contact-whatsapp {
+      font-size: 22px; font-family: 'Playfair Display', serif; color: #fff;
+      text-decoration: none; margin-bottom: 35px; display: inline-flex;
+      align-items: center; gap: 10px; transition: color 0.3s; line-height: 1.3;
+    }
+    .contact-whatsapp:hover { color: var(--accent); }
+
+    .social { display: flex; gap: 16px; justify-content: center; margin-bottom: 40px; }
+    .social a {
+      width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center;
+      color: #fff; text-decoration: none; border: 1px solid var(--glass-border);
+      background: var(--glass-bg); transition: all 0.3s ease; font-size: 16px;
+    }
+    .social a:hover { background: var(--accent); color: #000; transform: translateY(-3px); }
+    .copy { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+    /* Animaciones Scroll */
+    .fade-in { opacity: 0; transform: translateY(25px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+
+<body>
+
+  <div class="social-sidebar">
+    <a href="https://www.instagram.com/lezzamamusic" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/LezzamaMusic/" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://open.spotify.com/artist/7K9cHYm2gX7mRCrFa3Y6aE" target="_blank" rel="noopener" title="Spotify"><i class="fab fa-spotify"></i></a>
+    <a href="https://www.youtube.com/@lezzamamusic" target="_blank" rel="noopener" title="YouTube"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.tiktok.com/@lezzamamusic" target="_blank" rel="noopener" title="TikTok"><i class="fab fa-tiktok"></i></a>
+  </div>
+
+  <nav>
+    <div class="nav-container">
+
+      <div class="nav-links" id="menuLinks">
+        <a href="#bio"><span class="lang-es">Bio</span><span class="lang-en">Bio</span></a>
+        <a href="#tour"><span class="lang-es">Tour</span><span class="lang-en">Tour</span></a>
+        <a href="#music"><span class="lang-es">Música</span><span class="lang-en">Music</span></a>
+        <a href="#gallery"><span class="lang-es">Galería</span><span class="lang-en">Gallery</span></a>
+        <a href="#contact"><span class="lang-es">Contacto</span><span class="lang-en">Contact</span></a>
+      </div>
+
+      <a href="#" class="brand-logo">
+        <span class="logo-text logo-first">HOMERO</span>
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjJfNU0cEqDW-JJDxATK2EkVdfgRxCgoI7mbCt98L4adTDaaICT5w_OiLcezIWsCS_-FSFCjrFzLywfXXVCiAAT6ucQjlS2R8GZZRptxnJgM-BaB3COMAdSgzivR_ksInzyoJL41XC_eRTDANyr5KwktHkyowoClN-ZcShLUIQafCvjf7Gv3BUrclmHPwRh/s1600/Emblema%20white.png" alt="Logo" class="logo-img">
+        <span class="logo-text logo-last">LEZZAMA</span>
+      </a>
+
+      <div class="nav-right-box">
+        <div class="desktop-socials">
+          <a href="https://www.instagram.com/lezzamamusic" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/LezzamaMusic/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://open.spotify.com/artist/7K9cHYm2gX7mRCrFa3Y6aE" target="_blank" rel="noopener"><i class="fab fa-spotify"></i></a>
+          <a href="https://www.youtube.com/@lezzamamusic" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.tiktok.com/@lezzamamusic" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
+        </div>
+
+        <button class="lang-toggle-btn" id="langBtn" aria-label="Cambiar idioma">
+          <i class="fa-solid fa-globe"></i>
+          <span class="lang-es">EN</span><span class="lang-en">ES</span>
+        </button>
+
+        <div class="menu-toggle-icon" id="menuToggle">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-content fade-in">
+      <div class="hero-title-box">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgVnO-WbqMAtcPb32qG6i-nKjEmZwhvlbGyElIqLkdsDWDgvTlnwZms8yVRGVXUDRuzNPCDDYaA9IHTZM4J8147_ytOXpW6zGoTdiF_NY-Npu2LrUk4Vf-bmZsYGJtVJEQDf21tzBiL9qakT7Kc7WdlhYWW_jUfcbXHySbgfgj2o5jJfyhCTQnma9a458YW/s1600/Full%20White%20v1.png" alt="Homero Lezzama" class="hero-logo-img">
+      </div>
+      <div class="hero-subtitle">
+        <span class="lang-es">Pianista & Tecladista</span>
+        <span class="lang-en">Pianist & Keyboardist</span>
+      </div>
+      <a href="#tour" class="btn btn-primary">
+        <span class="lang-es">Próximos Eventos</span>
+        <span class="lang-en">View Dates</span>
+      </a>
+    </div>
+  </div>
+
+  <section id="bio">
+    <div class="bio-container">
+      <div class="bio-text fade-in">
+        <h2 class="section-title lang-es" style="text-align: left;">Sobre mí</h2>
+        <h2 class="section-title lang-en" style="text-align: left;">About me</h2>
+
+        <p class="lang-es">Homero Lezzama inició su viaje musical a los 5 años de edad, transitando desde sus primeras influencias populares hacia la disciplina de la música clásica. A lo largo de su carrera profesional, enriquecida por colaboraciones con artistas de todo el mundo, ha consolidado una fuerte pasión por el rock y el metal, convirtiéndolos en el eje principal de su evolución artística.<br><br>Con un enfoque que fusiona la técnica clásica, el folclor latinoamericano y la energía desbordante de la música contemporánea, la propuesta artística de Homero transita con naturalidad desde potentes interpretaciones de grandes bandas de rock hasta la profundidad de las obras clásicas.</p>
+
+        <p class="lang-en">Homero Lezzama began his musical journey at the age of 5, moving from his early popular influences to the discipline of classical music. Throughout his professional career, enriched by collaborations with artists worldwide, he has consolidated a strong passion for rock and metal, making them the core axis of his artistic evolution.<br><br>With an approach that fuses classical technique, Latin American folklore, and the overflowing energy of contemporary music, Homero's artistic proposal moves naturally from powerful renditions of great rock bands to the depth of classical masterworks.</p>
+
+        <p class="lang-es"><i>"Mi objetivo es llevar el instrumento a nuevas audiencias, creando atmósferas inmersivas en cada presentación."</i></p>
+        <p class="lang-en"><i>"My objective is to take the instrument to new audiences, creating immersive atmospheres in each presentation."</i></p>
+      </div>
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjnQUExNvXsQimVcJB8A1kef2cdnzN74KZThoWhzCX4kHA_ui91rYyGLITR8MnOgStQ9w6Tg6X0KHEvW02EMaOmLpkGXxnzU_eef2cTdu6RTDxWGI_J_cKBOBXSbe5UITXJUAcM-ONBPLulU-fMpDDNPH-jXspz3HHj1u1BK_QPBkGVDeb-fzq4gDsq0bCT/s1600/HOMERO%20POSE.png" alt="Homero Lezzama" class="bio-img fade-in">
+    </div>
+  </section>
+
+  <section id="tour" class="fade-in">
+    <h2 class="section-title"><span class="lang-es">Próximos Conciertos</span><span class="lang-en">Upcoming Shows</span></h2>
+    <div class="tour-table">
+
+      <div class="tour-row">
+        <div class="tour-date">
+          <span class="lang-es">22 Abr - 14 Oct / 2026</span>
+          <span class="lang-en">Apr 22 - Oct 14 / 2026</span>
+        </div>
+        <div class="tour-venue">HAL, ms Oosterdam</div>
+        <div class="tour-city">
+          <span class="lang-es">Mediterráneo, Europa</span>
+          <span class="lang-en">Mediterranean, Europe</span>
+        </div>
+        <div class="tour-btn-col">
+          <a href="javascript:void(0);" class="btn-tour" onclick="triggerTrollTicket()">
+            <span class="lang-es">Tickets</span><span class="lang-en">Tickets</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="tour-row">
+        <div class="tour-date">TBA / 2026</div>
+        <div class="tour-venue">
+          <span class="lang-es">Tour Invierno 2026</span>
+          <span class="lang-en">Winter Tour 2026</span>
+        </div>
+        <div class="tour-city">
+          <span class="lang-es">Anuncio Próximamente</span>
+          <span class="lang-en">Coming Soon</span>
+        </div>
+        <div class="tour-btn-col">
+          <a href="javascript:void(0);" class="btn-tour" style="opacity: 0.3; cursor: not-allowed;">
+            <span class="lang-es">Info</span><span class="lang-en">Info</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="music">
+    <h2 class="section-title fade-in"><span class="lang-es">Música & Video</span><span class="lang-en">Music & Video</span></h2>
+    <div class="media-grid fade-in">
+      <div class="card">
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/7K9cHYm2gX7mRCrFa3Y6aE?utm_source=generator&si=15462991c557457e" width="100%" height="352" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <div style="text-align:center; margin-top:15px;">
+          <a href="https://open.spotify.com/artist/7K9cHYm2gX7mRCrFa3Y6aE" target="_blank" rel="noopener" class="btn"><i class="fa-brands fa-spotify" style="color:#1db954;"></i> Spotify</a>
+        </div>
+      </div>
+      <div class="card">
+        <iframe width="100%" height="352" src="https://www.youtube.com/embed/beODATI-zEg?si=lCqG4xUyQ1w8O4HM&start=95" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div style="text-align:center; margin-top:15px;">
+          <a href="https://www.youtube.com/@lezzamamusic" target="_blank" rel="noopener" class="btn"><i class="fa-brands fa-youtube" style="color:#ff0000;"></i> YouTube</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="fade-in">
+    <h2 class="section-title"><span class="lang-es">Galería</span><span class="lang-en">Gallery</span></h2>
+
+    <div class="gallery-wrapper">
+      <div class="gallery" id="interactiveGallery">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQ9NX77yN-Dk1Xhs3yTNpXCyydFuSLXmDkMQ_i-nAXwUF_QsvDjpgqkcJtD9RB-xA152lIfX-_K-TbqHLZzDaGglTmJfjvVilJ5TXyNHRUBYOATO0lexk0Cmyr-Z7r5reDgilfZ91q_hY-C3697HXX11yzVgzfglc_QANBZMUi09_5Tt9hYzbE5P6ICzNG/s1600/Studio%204.jpg" alt="9" loading="lazy">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj1bNfIX-uTOoEfseFb0ySGAtaLADVKbwJFtn8Q3mqEk7Qak78757FOIueXM_fnWeRiLUxNjzIOctS8myGFqVkIcxfC8H1azAEvZS15V5ZivZwQ824w3IoJYoFKT-rNW-HyeSMnAnhchJKeI_BV5-bS6aBiteAXaDUOjLq_tpWyJO5w1ZYeKy9bvxmpSzDI/s1600/Live%201.jpg" alt="3" loading="lazy">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhAz2vWAGp1p4J22Qsu5T3XnGVoLvSpKV1rr6qGdXRzuDrB_ORPu2zkECmD9t1ao9oW5MgDPDLyESsA11xfInRAFG-Dg728uVmbuWBB_1xARZl7YrNM-tIrnVqb2pWQVoDZzakTHJmtCdR-R1Mt2inkuR5Ql5G9Puwq2jY7ev83UJRwiaYItcKx8EFQZ5Zy/s1600/Live%202.png" alt="8" loading="lazy">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiFG4PV06Fl9H7apVFbE8wD3jx4IblQe_j3On8Usd7ECkBtcCOFuJD50cb8F0li646spqOkJzi_C2x-ESH7o3MgeMWpyDZNwD15vW8FLmOm0iuhVQ22q_SMoZhowUnGbg3fkHsvX8NGxsnnFun3hKhXUPGcsErWYDWIMyU8Hgf_v6euzjSVveEcK06SQq1k/s1600/Concierto%203.jpg" alt="2" loading="lazy">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgSVmJolEtIS-CaEiX20qVeDVBGcw16VPdU2BCq-VA3UE83AgHvaM_kqojWgEZnWT1-p9GE70fgDrYyCqq6a2ythgx_4RySwikvnSlHzTAQj6VefY3D2lbq1LWa2TQz1A_ILrYJ2K3LdZPgtr3gjmux3Q37iFPwIYpRf96Z62FwVpp_ssH4VBSBgnsctz7J/s1600/Concierto%203" alt="Concierto 3" loading="lazy">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhL6KRW7yzSLHgV6JKx31Bdh6K-y3wIkSHKit_nYYvT-OpROLioB8v307fWng1KydI175Pll9CjTZwW0vUa7mHKe-Hd1OCqe0YkgnayPZe4ZpTQ4q1huKz2Cm9N4HsIOq2Jxv2ohD30gkGwcBUvWUswDQrZdJ_EexTmrhEmywAbY-WA0mlKKC122fqke8qI/s1600/Concierto%201.jpg" alt="Concierto 1" loading="lazy">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhFhGVyrhRTIdUKUTaG6pdVo34APK9ngX6e-HWX2EBW2FjVilN1W1lCq5eF-GW-1OxiAmNL5YOGjAG8m5o4HuhBhnF86P78g4tTtEGl5Akq3HAul9dxfreEpN7EoVsful1tRjj84gw_iDPF7Wr6r0QGwQWABSS9naiaorV83xrLD1DtHdFwfI699veaEs-o/s1600/Concierto%205.jpg" alt="Concierto 5" loading="lazy">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjojobdF3Ely0rCuCeOk9i9G34f8v32DP58uM0pj1J0Nkh6e1s2pE80nl-uByvxazH1Cy7oSukJQ4PCiECFp79kaPT1h7F7XQoZ-fX93_GphZJbzw3PesA6GD3bNiwqs5q2EZ76_VRAYDFT5bEhKql8kXjXe_zsjDxoAgL7gF4YyL9yYi9cqj2WBQxR4i5W/s1600/Gemini_Generated_Image_uejpvguejpvguejp.png" alt="1" loading="lazy">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiX1LdjcBIU9Gt6P_lKzcIt1nIEEDTR8CxGPzufPBnUL5V58QfGn2rKsRuQ6Cdf65O8lag8i8_U6hVilSEj_k1uNRwuT-ReXe7jHwFohyphenhyphenIoDFYTE6fKl_2s1lc_Z1D7N6RBRYgRxbMTrwTiXzwlTfC4ZFxWFG_DBsP6EWZlWhPxNvTQeFqoRRU-8zrbbqnp/s1600/HOMERO%20POSE.png" alt="4" loading="lazy">
+      </div>
+    </div>
+
+    <div class="gallery-nav-hint">
+      <i class="fa-solid fa-chevron-left gallery-hint-arrow left-arrow"></i>
+      <span class="lang-es">Desliza para ver más fotos</span>
+      <span class="lang-en">Scroll to view more photos</span>
+      <i class="fa-solid fa-chevron-right gallery-hint-arrow"></i>
+    </div>
+  </section>
+
+  <div id="contact" style="border-top: 1px solid var(--glass-border);">
+
+    <section class="endorsements-section fade-in" style="border:none; padding-bottom: 20px;">
+      <div class="endorsements-title">
+        <span class="lang-es">Artista Patrocinado Oficialmente por</span>
+        <span class="lang-en">Officially Endorsed Artist</span>
+      </div>
+      <div class="endorsements-display">
+        <div class="endorsements-brand">
+          ROLAND <span>MÉXICO</span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="fade-in">
+      <h2 class="section-title" style="margin-bottom: 35px;"><span class="lang-es">Contacto & Booking</span><span class="lang-en">Contact & Booking</span></h2>
+
+      <p class="lang-es" style="color: var(--muted); max-width: 650px; margin: -25px auto 30px; font-size: 15px; line-height: 1.6;">
+        Para contrataciones de conciertos, festivales y eventos globales, escribe directamente a los canales oficiales.
+      </p>
+      <p class="lang-en" style="color: var(--muted); max-width: 650px; margin: -25px auto 30px; font-size: 15px; line-height: 1.6;">
+        For festival bookings, concerts, and global management, contact through official channels.
+      </p>
+
+      <a href="mailto:lezzamamusic@gmail.com" class="contact-email">lezzamamusic@gmail.com</a>
+      <br>
+
+      <div>
+        <a href="https://wa.me/525548618048" target="_blank" rel="noopener" class="contact-whatsapp">
+          <i class="fa-brands fa-whatsapp" style="color:#25D366;"></i> +52 55 4861 8048
+        </a>
+      </div>
+
+      <div style="margin: 0 auto 40px;">
+        <a href="https://www.dropbox.com/scl/fo/pjhe7ej0s12mdp8u4z7xm/AOaCkZiJ5pg1BCJ8JPXdGVg?rlkey=q0djsyhscupvjsvedtmpsmhpy&dl=0" target="_blank" rel="noopener" class="btn" style="border-color: rgba(212,175,55,0.3); background: rgba(212,175,55,0.02);">
+          <i class="fa-solid fa-folder-open" style="color:var(--accent);"></i>
+          <span class="lang-es">EPK / Rider Técnico / Logos</span>
+          <span class="lang-en">EPK / Technical Rider / Logos</span>
+        </a>
+      </div>
+
+      <div class="social">
+        <a href="https://www.facebook.com/LezzamaMusic/" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/lezzamamusic" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@lezzamamusic" target="_blank" rel="noopener" title="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="https://music.apple.com/mx/artist/homero-lezama/1526705205" target="_blank" rel="noopener" title="Apple Music"><i class="fab fa-apple"></i></a>
+        <a href="https://www.youtube.com/@lezzamamusic" target="_blank" rel="noopener" title="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+
+      <p class="copy">© 2026 Lezzama Music. <span class="lang-es">Todos los derechos reservados.</span><span class="lang-en">All rights reserved.</span></p>
+    </footer>
+  </div>
+
+  <div class="lightbox-overlay" id="galleryLightbox" aria-hidden="true" role="dialog">
+    <button class="lightbox-close-btn" id="closeLightbox" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
+    <button class="lightbox-nav-btn prev-btn" id="prevLightbox" aria-label="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
+    <img src="" alt="View" class="lightbox-img" id="lightboxImg">
+    <button class="lightbox-nav-btn next-btn" id="nextLightbox" aria-label="Siguiente"><i class="fa-solid fa-chevron-right"></i></button>
+  </div>
+
+  <script>
+    (function(){
+      const body = document.body;
+
+      /* --- 1. Control Menú Móvil --- */
+      const menuToggle = document.getElementById('menuToggle');
+      const navLinks = document.getElementById('menuLinks');
+      const toggleIcon = menuToggle ? menuToggle.querySelector('i') : null;
+
+      function closeMenu() {
+        if (navLinks && navLinks.classList.contains('active')) {
+          navLinks.classList.remove('active');
+          if (toggleIcon) toggleIcon.className = 'fa-solid fa-bars';
+        }
+      }
+
+      if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const isActive = navLinks.classList.toggle('active');
+          if (toggleIcon) {
+            toggleIcon.className = isActive ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+          }
+        });
+
+        document.addEventListener('click', (e) => {
+          if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+            closeMenu();
+          }
+        });
+      }
+
+      /* --- 2. Desplazamiento Fluido --- */
+      document.querySelectorAll('.nav-links a, .hero-content a[href^="#"], a[href="#contact"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+            closeMenu();
+          }
+        });
+      });
+
+      /* --- 3. Galería con Carrusel y Teclado --- */
+      const gallery = document.getElementById('interactiveGallery');
+      const lightbox = document.getElementById('galleryLightbox');
+      const lightboxImg = document.getElementById('lightboxImg');
+      const closeLightbox = document.getElementById('closeLightbox');
+      const prevBtn = document.getElementById('prevLightbox');
+      const nextBtn = document.getElementById('nextLightbox');
+
+      if (gallery && lightbox && lightboxImg) {
+        const imagesArray = Array.from(gallery.querySelectorAll('img'));
+        let currentImgIndex = 0;
+
+        const openLightbox = (index) => {
+          currentImgIndex = index;
+          lightboxImg.src = imagesArray[currentImgIndex].src;
+          lightbox.classList.add('active');
+          lightbox.setAttribute('aria-hidden', 'false');
+        };
+
+        const closeLightboxFunc = () => {
+          lightbox.classList.remove('active');
+          lightbox.setAttribute('aria-hidden', 'true');
+        };
+
+        imagesArray.forEach((img, index) => {
+          img.addEventListener('click', () => openLightbox(index));
+        });
+
+        closeLightbox.addEventListener('click', closeLightboxFunc);
+
+        const showNext = () => {
+          currentImgIndex = (currentImgIndex + 1) % imagesArray.length;
+          lightboxImg.src = imagesArray[currentImgIndex].src;
+        };
+
+        const showPrev = () => {
+          currentImgIndex = (currentImgIndex - 1 + imagesArray.length) % imagesArray.length;
+          lightboxImg.src = imagesArray[currentImgIndex].src;
+        };
+
+        nextBtn.addEventListener('click', showNext);
+        prevBtn.addEventListener('click', showPrev);
+
+        lightbox.addEventListener('click', (e) => {
+          if (e.target === lightbox) {
+            closeLightboxFunc();
+          }
+        });
+
+        document.addEventListener('keydown', (e) => {
+          if (lightbox.classList.contains('active')) {
+            if (e.key === 'Escape' || e.key === 'Esc') {
+              closeLightboxFunc();
+            } else if (e.key === 'ArrowRight') {
+              showNext();
+            } else if (e.key === 'ArrowLeft') {
+              showPrev();
+            }
+          }
+        });
+      }
+
+      /* --- 4. Sistema de Idioma --- */
+      const langBtn = document.getElementById('langBtn');
+      if (langBtn) {
+        langBtn.addEventListener('click', () => {
+          body.classList.toggle('lang-mode-en');
+        });
+      }
+
+      /* --- 5. Animaciones Scroll --- */
+      const fadeElements = document.querySelectorAll('.fade-in');
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        }, { threshold: 0.1 });
+        fadeElements.forEach(el => observer.observe(el));
+      } else {
+        fadeElements.forEach(el => el.classList.add('visible'));
+      }
+
+      /* --- 6. Función del Botón Tickets (Bilingüe) --- */
+      window.triggerTrollTicket = function() {
+        if (document.body.classList.contains('lang-mode-en')) {
+          alert("Tickets Sold Out.");
+        } else {
+          alert("Boletos Agotados.");
+        }
+      };
+    })();
+  </script>
+</body>
+</html>
